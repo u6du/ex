@@ -1,14 +1,4 @@
-# throw
-
-```
-package throw
-
-func Throw(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
-```
+# ex
 
 Usage
 
@@ -19,16 +9,16 @@ import (
 	"io/ioutil"
 	"os"
 
-	. "github.com/urwork/throw"
+	. "github.com/u6du/ex"
 )
 
 func main() {
 	filepath := "test.txt"
 
 	_, err := os.Stat(filepath)
-	Throw(err)
+	Panic(err)
 
-	Throw(ioutil.WriteFile(filepath, []byte("test"), 0644))
+	Panic(ioutil.WriteFile(filepath, []byte("test"), 0644))
 
 }
 ```
