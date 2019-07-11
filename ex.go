@@ -17,3 +17,11 @@ func Warn(err error) {
 func Call(f func() error) {
 	Warn(f())
 }
+
+type close interface {
+	Close() error
+}
+
+func Close(c close) {
+	Call(c.Close)
+}
