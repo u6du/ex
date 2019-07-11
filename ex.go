@@ -13,3 +13,7 @@ func Warn(err error) {
 		warn.Err(err)
 	}
 }
+
+func Call(f func() error) {
+	Warn(f())
+}
